@@ -9,7 +9,7 @@ In `On Web Connection` method, if you want to edit file into root database folde
 ```4d
 $rootFolder:=Folder(fk database folder) // folder to edit files
 
-$markdown:=mark4 ($rootFolder;$1;$2)
+$markdown:=mark4down ($rootFolder;$1;$2)
 
 If (Not($markdown))
 	// deliver others files, like image if not managed by mark4
