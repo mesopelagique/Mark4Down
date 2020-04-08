@@ -29,4 +29,4 @@ Go to `WebFolder` and add it to `style.css` file or add a link to a css file int
 ## Acknowledgment
 
 - Markdown rendering by [showdown.js](https://github.com/showdownjs/showdown)
-- Code syntax highlighting by [highlightjs](https://highlightjs.org/) wih [4d addon](https://github.com/highlightjs/highlightjs-4d)
+- Code syntax highlighting by [highlightjs](https://highlightjs.org/) with [4d addon](https://github.com/highlightjs/highlightjs-4d)
