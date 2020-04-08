@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="2">
+	<com.4d>
+		<web>
+			<standalone_server>
+				<configuration https_port_number="8844" port_number="8080"/>
+			</standalone_server>
+		</web>
+	</com.4d>
+</preferences>
