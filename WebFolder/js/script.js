@@ -1,29 +1,22 @@
 window.onload = function() {
-    var converter = new showdown.Converter();
-    var pad = document.getElementById('pad');
-    var markdownArea = document.getElementById('markdown');   
-
-    var convertTextAreaToMarkdown = function(){
-        var markdownText = pad.value;
-        html = converter.makeHtml(markdownText);
-        markdownArea.innerHTML = html;
-  
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block);
-        });
+    var postChange = function(value) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", window.location, true);
+        xhttp.setRequestHeader("Content-type", "text/markdown");
+        xhttp.send(value);
     };
-
-    pad.addEventListener('input', convertTextAreaToMarkdown);
-
-    convertTextAreaToMarkdown();
+    var simplemde = new SimpleMDE({
+        renderingConfig: {codeSyntaxHighlighting: true},
+        element: document.getElementById('pad'),
+	    showIcons: ["code", "table", "horizontal-rule", "undo", "redo"],
+        placeholder: "Type here...",
+        previewRender: function(plainText, preview) { // Async method
+            setTimeout(function(){
+                postChange(plainText);
+            }, 0);
+            return simplemde.markdown(plainText);
+        },
+    });
+    simplemde.toggleSideBySide();
     hljs.initHighlightingOnLoad();
-};
-
-var postChange = function(textarea) {
-   // alert(textarea.value );
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", window.location, true);
-    xhttp.setRequestHeader("Content-type", "text/markdown");
-    xhttp.send(textarea.value);
 };

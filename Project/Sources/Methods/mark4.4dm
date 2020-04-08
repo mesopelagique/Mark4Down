@@ -30,7 +30,7 @@ If ($file.extension=".md")
 				$file.create()
 				$file.setText($text)
 			Else 
-				$text:=$file.getText()
+				$text:=$file.getText(106;Document with LF:K24:22)
 			End if 
 			
 			$output:=Folder:C1567(fk web root folder:K87:15).file("editor.md.html").getText()
@@ -48,7 +48,9 @@ If ($file.extension=".md")
 			
 			$text:=""
 			WEB GET HTTP BODY:C814($text)
-			$file.setText($text)
+			$file.setText($text;106;Document with LF:K24:22)
+			
+			WEB SEND TEXT:C677("ok")
 			
 		Else 
 			

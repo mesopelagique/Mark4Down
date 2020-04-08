@@ -4,19 +4,15 @@
     <title>Mark4: Realtime Markdown Viewer</title>
     <link href="/style/bootstrap.min.css" rel="stylesheet">
     <link href="/style/atom-one-dark.css" rel="stylesheet">
+    <link href="/style/simplemde.min.css" rel="stylesheet">
     <link href="/style/style.css" rel="stylesheet">
 </head>
 
 <body class="container-fluid">
-
-    <section class="row">
-        <textarea class="col-md-6 full-height" id="pad" onchange="postChange(this)">Write your text here..</textarea>
-        <div class="col-md-6 full-height" id="markdown"></div>
-    </section>
-
+    <textarea class="col-md-6 full-height" id="pad">Write your text here..</textarea>
     <script src="/js/highlight.pack.js"></script>
     <script src="/js/highlight.4d.min.js"></script>
-    <script src="/js/showdown.min.js"></script>
+    <script src="/js/simplemde.min.js"></script>
     <script src="/js/script.js"></script>
 
 </body>
