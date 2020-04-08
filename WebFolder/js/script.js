@@ -13,6 +13,9 @@ window.onload = function() {
         previewRender: function(plainText, preview) { // Async method
             setTimeout(function(){
                 postChange(plainText);
+                document.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightBlock(block);
+                });
             }, 0);
             return simplemde.markdown(plainText);
         },
