@@ -1,4 +1,4 @@
-﻿# Mark4Down
+# Mark4Down
 
 Realtime markdown editor example in your database.
 
@@ -8,7 +8,7 @@ Edit documentation from your local machine or remote device such as iPad. The fi
 
 ### Using your database web server
 
-In `On Web Connection` method, if you want to edit file into root database folder simply do
+In `On Web Connection` method, if you want to edit file into yor root database folder simply do
 
 ```4d
 $markdown:=mark4down (Folder(fk database folder) ;$1;$2)
@@ -23,7 +23,7 @@ End if
 
 with `$1`, the file name and `$2` the http method (`GET` or `POST`) , ie. parameters of  `On Web Connection`
 
-Then open your browser to see it live
+Then open your browser
 
 ---
 
