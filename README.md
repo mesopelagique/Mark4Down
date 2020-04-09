@@ -2,24 +2,26 @@
 
 Realtime markdown editor example in your database.
 
+Edit documentation from your local machine or remote device such as iPad. The file is saved automatically. New file too.
+
 ## Usage
+
+### Using your database web server
 
 In `On Web Connection` method, if you want to edit file into root database folder simply do
 
 ```4d
-$rootFolder:=Folder(fk database folder) // folder to edit files
-
-$markdown:=mark4down ($rootFolder;$1;$2)
+$markdown:=mark4down (Folder(fk database folder) ;$1;$2)
 
 If (Not($markdown))
-	// deliver others files, like image if not managed by mark4
+	// deliver others files, like image if not managed by mark4down
 	// you can limit to images or folder Documentation, as you want;
-	// or do other request on your server
+	// or do other requests on your server
 	WEB SEND FILE($rootFolder.file(Substring($1;2)).platformPath)
 End if
 ```
 
-with `$1`, the file name and `$2` the http method (`GET` or `POST`)
+with `$1`, the file name and `$2` the http method (`GET` or `POST`) , ie. parameters of  `On Web Connection`
 
 Then open your browser to see it live
 
@@ -29,7 +31,24 @@ Then open your browser to see it live
 
 ---
 
-Edit documentation from your local machine or remote device such as iPad. The file is save automatically. New file too.
+### Using the component web server
+
+#### by accepting to execute `On Host Database Event` method of the component
+
+_In database setting, security tab..._
+
+A web server for the component will be started when your database start.
+
+Its configuration is defined by component in [settings.4DSettings](Project/Sources/settings.4DSettings), so the url will be 
+http://localhost:8349
+
+#### or by starting the component web server yourself
+
+```4d
+mark4downWebServer().start() //  you can choose options like HTTP port
+```
+
+## More
 
 ### Add your own style
 

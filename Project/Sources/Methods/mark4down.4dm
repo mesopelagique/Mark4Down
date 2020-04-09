@@ -26,15 +26,15 @@ If ($file.extension=".md")
 		: (Position:C15("GET";$method)=1)
 			
 			If (Not:C34($file.exists))
-				$text:="# "+$name+"\n\nWrite your text here..."
+				$text:="# "+$file.name+"\n\nWrite your text here..."
 				$file.create()
 				$file.setText($text)
 			Else 
 				$text:=$file.getText(106;Document with LF:K24:22)
 			End if 
 			
-			$output:=Folder:C1567(fk database folder).folder("WebFolder").file("editor.md.html").getText()
-			
+			C_TEXT:C284($output)
+			$output:=Folder:C1567(fk resources folder:K87:11).file("editor.md.html").getText()
 			$output:=Replace string:C233($output;"Write your text here..";$text)
 			
 			WEB SEND TEXT:C677($output)

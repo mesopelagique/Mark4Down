@@ -1,9 +1,12 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="2">
+﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="5">
 	<com.4d>
 		<web>
 			<standalone_server>
-				<configuration https_port_number="8844" port_number="8080"/>
+				<configuration allow_ssl="false" https_port_number="8844" port_number="8349" publish_at_startup="true"/>
 			</standalone_server>
 		</web>
+		<compiler>
+			<options compilation_path="3"/>
+		</compiler>
 	</com.4d>
 </preferences>
