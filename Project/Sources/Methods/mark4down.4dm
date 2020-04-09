@@ -33,7 +33,7 @@ If ($file.extension=".md")
 				$text:=$file.getText(106;Document with LF:K24:22)
 			End if 
 			
-			$output:=Folder:C1567(fk web root folder:K87:15).file("editor.md.html").getText()
+			$output:=Folder:C1567(fk database folder).folder("WebFolder").file("editor.md.html").getText()
 			
 			$output:=Replace string:C233($output;"Write your text here..";$text)
 			
