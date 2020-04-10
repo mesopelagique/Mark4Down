@@ -1,6 +1,6 @@
 # Mark4Down
 
-Realtime markdown editor example in your database.
+Realtime markdown editor for your 4D database.
 
 Edit documentation from your local machine or remote device such as iPad. The file is saved automatically. New file too.
 
@@ -21,9 +21,9 @@ If (Not($markdown))
 End if
 ```
 
-with `$1`, the file name and `$2` the http method (`GET` or `POST`) , ie. parameters of  `On Web Connection`
+> with `$1`, the file name and `$2` the http method (`GET` or `POST`) , ie. parameters of  `On Web Connection`
 
-Then open your browser
+Then open your browser to see the web markdown editor
 
 ---
 
@@ -32,6 +32,10 @@ Then open your browser
 ---
 
 ### Using the component web server
+
+If do not want to poluate your database web server, a component could provide one since new 18R release.
+
+There is two way to launch the component web server:
 
 #### by accepting to execute `On Host Database Event` method of the component
 
