@@ -1,4 +1,9 @@
 # Mark4Down
+[![language][code-shield]][code-url]
+[![language-top][code-top]][code-url]
+![code-size][code-size]
+[![release][release-shield]][release-url]
+[![license][license-shield]][license-url]
 
 Realtime markdown editor for your 4D database.
 
@@ -62,3 +67,14 @@ Go to `WebFolder` and add it to `style.css` file or add a link to a css file int
 
 - Markdown editor by [SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor)
 - Code syntax highlighting by [highlightjs](https://highlightjs.org/) with [4d addon](https://github.com/highlightjs/highlightjs-4d)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[code-shield]: https://img.shields.io/static/v1?label=language&message=4d&color=blue
+[code-top]: https://img.shields.io/github/languages/top/mesopelagique/Mark4Down.svg
+[code-size]: https://img.shields.io/github/languages/code-size/mesopelagique/Mark4Down.svg
+[code-url]: https://developer.4d.com/
+[release-shield]: https://img.shields.io/github/v/release/mesopelagique/Mark4Down
+[release-url]: https://github.com/mesopelagique/Mark4Down/releases/latest
+[license-shield]: https://img.shields.io/github/license/mesopelagique/Mark4Down
+[license-url]: LICENSE.md
