@@ -5,7 +5,8 @@ Realtime markdown editor for your 4D database.
 
 * Edit documentation from your local machine or remote device such as iPad.
 * The file is saved automatically. New file too.
-* See list of available or missing documentation files (toolbar buttons at the right)
+* See list of available, missing or orphan documentation files (toolbar buttons at the right)
+* Open github or see diff from last commit
 
 <img src="Documentation/preview.png" alt="preview"
 	title="preview" width="600" />

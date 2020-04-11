@@ -43,6 +43,27 @@ window.onload = function() {
     );
     simplemde.toolbar.push(
         {
+			name: "diff",
+			action: function customFunction(){
+                var fileName = window.location.pathname;
+                if (fileName == "/") {
+                    fileName="/README.md"
+                }
+               // window.open('/mark4down/diff'+fileName, '_blank');
+
+                var previewPanel = document.getElementsByClassName("editor-preview-side")[0];
+                previewPanel.classList.add("editor-preview-active-side");
+                previewPanel.innerHTML='<object type="text/html" style="width: 100%; height: 100%" data="/mark4down/diff'+fileName+'" ></object>';
+		
+			},
+			className: "fas fa-exchange-alt",
+			title: "diff",
+			id: "diff-button"
+		}
+    );
+    simplemde.toolbar.push("|");
+    simplemde.toolbar.push(
+        {
 			name: "list",
 			action: function customFunction(){
                 console.log("go to list");
@@ -80,6 +101,17 @@ window.onload = function() {
 			className: "fa fa-github",
 			title: "github",
 			id: "github-button"
+		}
+    );
+    simplemde.toolbar.push(
+        {
+			name: "fulldiff",
+			action: function customFunction(){
+                window.open('/mark4down/diff/', '_blank');
+			},
+			className: "fab fa-stack-exchange",
+			title: "fulldiff",
+			id: "fulldiff-button"
 		}
     );
 

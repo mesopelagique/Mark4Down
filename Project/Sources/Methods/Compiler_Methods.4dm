@@ -4,3 +4,7 @@ C_OBJECT:C1216(mark4down ;$1)
 C_TEXT:C284(mark4down ;$2)
 C_TEXT:C284(mark4down ;$3)
 C_OBJECT:C1216(mark4downWebServer ;$0)
+
+  //htmlEncode
+C_TEXT:C284(htmlEncode ;$0)
+C_TEXT:C284(htmlEncode ;$1)

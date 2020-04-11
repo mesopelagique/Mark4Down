@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mark4: Realtime Markdown Browser</title>
+    <link href="/style/bootstrap.min.css" rel="stylesheet">
+    <link href="/style/atom-one-dark.css" rel="stylesheet">
+    <link href="/style/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
+    <base target="_parent">
+</head>
+
+<body class="container-fluid">
+    <h1>{{title}}</h1>
+    <div class="full-height" id="destination-elem-id">{{diff}}</div>
+    <script src="/js/highlight.pack.js"></script>
+    <script src="/js/highlight.4d.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html-ui.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const targetElement = document.getElementById('destination-elem-id');
+        const configuration = { drawFileList: true, matching: 'lines' };
+
+        const diffString = targetElement.innerHTML;
+        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+        diff2htmlUi.draw();
+    });
+    </script>
+</body>
+</html><!-- CSS -->
+
+<!-- Javascripts -->
