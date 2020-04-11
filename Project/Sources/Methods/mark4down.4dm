@@ -107,6 +107,24 @@ Case of
 				$output:=Replace string:C233($output;"{{lists}}";$text)
 				$output:=Replace string:C233($output;"{{title}}";"Missing")
 				WEB SEND TEXT:C677($output)
+				
+			: ($name="github")
+				
+				C_TEXT:C284($in;$out)
+				SET ENVIRONMENT VARIABLE:C812("_4D_OPTION_CURRENT_DIRECTORY";$root.platformPath)
+				LAUNCH EXTERNAL PROCESS:C811("git remote -v";$in;$out)
+				
+				For each ($text;Split string:C1554($out;"\n")) Until (Length:C16($in)>0)
+					If (Position:C15("github.com";$text)>1)
+						$text:=Substring:C12($text;Position:C15("http";$text))
+						$in:=Substring:C12($text;1;Position:C15(" ";$text)-1)
+					End if 
+				End for each 
+				
+				If (Length:C16($in)>0)
+					WEB SEND HTTP REDIRECT:C659($in)
+				End if 
+				
 			Else 
 				
 		End case 

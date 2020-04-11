@@ -71,6 +71,17 @@ window.onload = function() {
 			id: "missing-button"
 		}
     );
+    simplemde.toolbar.push(
+        {
+			name: "github",
+			action: function customFunction(){
+                window.open('/mark4down/github', '_blank');
+			},
+			className: "fa fa-github",
+			title: "github",
+			id: "github-button"
+		}
+    );
 
 	var tools = simplemde.toolbar;
 	simplemde.toTextArea();
