@@ -60,7 +60,7 @@ Go to `WebFolder` and add it to `style.css` file or add a link to a css file int
 
 ### Access documentation files list without editor
 
-#### Availlable
+#### Available
 
 Go to `/mark4down/list`, ex:  http://localhost:8349/mark4down/list
 
