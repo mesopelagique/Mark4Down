@@ -5,10 +5,81 @@ window.onload = function() {
         xhttp.setRequestHeader("Content-type", "text/markdown");
         xhttp.send(value);
     };
+    var saveData = (function () {
+        var a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        return function (text, fileName) {
+            var blob = new Blob([text], {type: "octet/stream"}),
+                url = window.URL.createObjectURL(blob);
+            a.href = url;
+            a.download = fileName;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        };
+    }());
+
+    // trick to prepare toolbar
+    var simplemde = new SimpleMDE({
+	    showIcons: ["code", "table", "heading-2", "heading-3","clean-block", "horizontal-rule", "undo", "redo"],
+    });
+ 
+    simplemde.toolbar.push("|");
+	simplemde.toolbar.push(
+        {
+			name: "download",
+			action: function customFunction(){
+                console.log("download")
+                var content = simplemde.value();
+                var currentPage = window.location.href;
+                var fileName = currentPage.substring(currentPage.lastIndexOf('/') + 1);
+                saveData(content, fileName);
+
+			},
+			className: "fa fa-download",
+			title: "download",
+			id: "download-button"
+		}
+    );
+    simplemde.toolbar.push(
+        {
+			name: "list",
+			action: function customFunction(){
+                console.log("go to list");
+                // window.location = "/mark4down/list";
+                var previewPanel = document.getElementsByClassName("editor-preview-side")[0];
+                previewPanel.classList.add("editor-preview-active-side");
+                previewPanel.innerHTML='<object type="text/html" style="width: 100%; height: 100%" data="/mark4down/list" ></object>';
+			},
+			className: "fa fa-list",
+			title: "list",
+			id: "list-button"
+		}
+    );
+    simplemde.toolbar.push(
+        {
+			name: "missing",
+			action: function customFunction(){
+                console.log("go to missing");
+                // window.location = "/mark4down/missing";
+                var previewPanel = document.getElementsByClassName("editor-preview-side")[0];
+                previewPanel.classList.add("editor-preview-active-side");
+                previewPanel.innerHTML='<object type="text/html" style="width: 100%; height: 100%" data="/mark4down/missing" ></object>';
+			},
+			className: "fas fa-book-dead",
+			title: "missing",
+			id: "missing-button"
+		}
+    );
+
+	var tools = simplemde.toolbar;
+	simplemde.toTextArea();
+	simplemde = null;
+
+    // Init the real mde
     var simplemde = new SimpleMDE({
         renderingConfig: {codeSyntaxHighlighting: true},
         element: document.getElementById('pad'),
-	    showIcons: ["code", "table", "horizontal-rule", "undo", "redo"],
         placeholder: "Type here...",
         previewRender: function(plainText, preview) { // Async method
             setTimeout(function(){
@@ -19,6 +90,7 @@ window.onload = function() {
             }, 0);
             return simplemde.markdown(plainText);
         },
+		toolbar: tools,
     });
     simplemde.toggleSideBySide();
     hljs.initHighlightingOnLoad();

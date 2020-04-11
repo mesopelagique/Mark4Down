@@ -1,19 +1,20 @@
-# Mark4Down
-[![language][code-shield]][code-url]
-[![language-top][code-top]][code-url]
-![code-size][code-size]
-[![release][release-shield]][release-url]
-[![license][license-shield]][license-url]
+﻿# Mark4Down
+[![language][code-shield]][code-url] [![language-top][code-top]][code-url] ![code-size][code-size] [![release][release-shield]][release-url] [![license][license-shield]][license-url]
 
 Realtime markdown editor for your 4D database.
 
-Edit documentation from your local machine or remote device such as iPad. The file is saved automatically. New file too.
+* Edit documentation from your local machine or remote device such as iPad.
+* The file is saved automatically. New file too.
+* See list of available or missing documentation files (toolbar buttons at the right)
+
+<img src="Documentation/preview.png" alt="preview"
+	title="preview" width="600" />
 
 ## Usage
 
 ### Using your database web server
 
-In `On Web Connection` method, if you want to edit file into yor root database folder simply do
+In `On Web Connection` method, if you want to edit file into your root database folder simply do
 
 ```4d
 $markdown:=mark4down (Folder(fk database folder) ;$1;$2)
@@ -26,19 +27,13 @@ If (Not($markdown))
 End if
 ```
 
-> with `$1`, the file name and `$2` the http method (`GET` or `POST`) , ie. parameters of  `On Web Connection`
+> with `$1` and `$2` parameters of  `On Web Connection` database method.
 
 Then open your browser to see the web markdown editor
 
----
-
-![preview](Documentation/preview.png)
-
----
-
 ### Using the component web server
 
-If do not want to poluate your database web server, a component could provide one since new 18R release.
+If do not want to pollute your database web server, a component could provide one since new 18R release.
 
 There is two way to launch the component web server:
 
@@ -63,10 +58,20 @@ mark4downWebServer().start() //  you can choose options like HTTP port
 
 Go to `WebFolder` and add it to `style.css` file or add a link to a css file into `editor.md.html`
 
+### Access documentation files list without editor
+
+#### Availlable
+
+Go to `/mark4down/list`, ex:  http://localhost:8349/mark4down/list
+
+#### Missing
+
+Go to `/mark4down/missing`, ex:  http://localhost:8349/mark4down/missing
+
 ## Acknowledgment
 
 - Markdown editor by [SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor)
-- Code syntax highlighting by [highlightjs](https://highlightjs.org/) with [4d addon](https://github.com/highlightjs/highlightjs-4d)
+- Code syntax highlighting by [highlightjs](https://highlightjs.org/) with [4d addons](https://github.com/highlightjs/highlightjs-4d)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
