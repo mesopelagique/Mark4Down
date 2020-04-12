@@ -13,6 +13,29 @@ Realtime markdown editor for your 4D database.
 
 ## Usage
 
+### Using the component web server
+
+If do not want to pollute your database web server, a component could provide one since new 18R release.
+
+There is two way to launch the component web server:
+
+#### by accepting to execute `On Host Database Event` method of the component
+
+_In database setting, security tab, "Execute  `On Host Database Event` ..._
+
+💡 This is the easiest way to have an editor always ready for all your database by placing this component into your 4D app Components folder
+
+A web server for the component will be started when your database start, the default url will be 
+[http://localhost:8349](http://localhost:8349)
+
+_as defined by component [settings.4DSettings](Project/Sources/settings.4DSettings)_
+
+#### or by starting the component web server yourself
+
+```4d
+mark4downWebServer().start() //  you can choose options like HTTP port
+```
+
 ### Using your database web server
 
 In `On Web Connection` method, if you want to edit file into your root database folder simply do
@@ -32,26 +55,17 @@ End if
 
 Then open your browser to see the web markdown editor
 
-### Using the component web server
+## Install
 
-If do not want to pollute your database web server, a component could provide one since new 18R release.
+### In your 4D for all your databases
 
-There is two way to launch the component web server:
+Drag the component in your 4D Components/ folder (on macOS for instance /Applications/4D.app/Contents/Components/)
 
-#### by accepting to execute `On Host Database Event` method of the component
+⚠️ The component folder must be renamed to Mark4Down.4dbase if you use source from github.
 
-_In database setting, security tab..._
+### For one database
 
-A web server for the component will be started when your database start.
-
-Its configuration is defined by component in [settings.4DSettings](Project/Sources/settings.4DSettings), so the url will be 
-http://localhost:8349
-
-#### or by starting the component web server yourself
-
-```4d
-mark4downWebServer().start() //  you can choose options like HTTP port
-```
+Drag the component in the Components folder into your database.
 
 ## More
 
@@ -68,6 +82,10 @@ Go to `/mark4down/list`, ex:  http://localhost:8349/mark4down/list
 #### Missing
 
 Go to `/mark4down/missing`, ex:  http://localhost:8349/mark4down/missing
+
+#### Full git diff
+
+Go to `/mark4down/missing`, ex:  http://localhost:8349/mark4down/diff
 
 ## Acknowledgment
 
