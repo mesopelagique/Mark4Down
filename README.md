@@ -71,7 +71,7 @@ Drag the component in the Components folder into your database.
 
 ### Add your own style
 
-Go to `WebFolder` and add it to `style.css` file or add a link to a css file into `editor.md.html`
+Go to `WebFolder` and add it to `style.css` file or add a link to a css file into `Resources/editor.html`
 
 ### Access documentation files list without editor
 
@@ -85,7 +85,7 @@ Go to `/mark4down/missing`, ex:  http://localhost:8349/mark4down/missing
 
 #### Full git diff
 
-Go to `/mark4down/missing`, ex:  http://localhost:8349/mark4down/diff/
+Go to `/mark4down/diff`, ex:  http://localhost:8349/mark4down/diff/
 
 ## Acknowledgment
 
