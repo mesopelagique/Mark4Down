@@ -85,7 +85,7 @@ Go to `/mark4down/missing`, ex:  http://localhost:8349/mark4down/missing
 
 #### Full git diff
 
-Go to `/mark4down/missing`, ex:  http://localhost:8349/mark4down/diff
+Go to `/mark4down/missing`, ex:  http://localhost:8349/mark4down/diff/
 
 ## Acknowledgment
 
