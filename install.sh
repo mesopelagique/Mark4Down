@@ -45,6 +45,6 @@ if [ -d "$dst" ]; then
   echo "🧹 Clean"
   rm -rf "$TMP"
 else
-  echo "No 4D path. Component in $src" >&2
+  echo "🛑 No 4D path. Component in $src" >&2
   exit 1
 fi
