@@ -42,8 +42,11 @@ if [ -d "$dst" ]; then
 
   cp -Rf $src $dst/
 
-  echo "🧹 Clean"
+  echo "🧹 Clean temporary files"
   rm -rf "$TMP"
+
+  echo "💡 Accept 'On Host Database Event' and restart your database. Then open http://localhost:8349"
+
 else
   echo "🛑 No 4D path. Component in $src" >&2
   exit 1
