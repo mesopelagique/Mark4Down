@@ -38,20 +38,18 @@ mark4downWebServer().start() //  you can choose options like HTTP port
 
 ### Using your database web server
 
-In `On Web Connection` method, if you want to edit file into your root database folder simply do
+In `On Web Connection` method, if you want to edit file into your root database folder do
 
 ```4d
 $markdown:=mark4down (Folder(fk database folder) ;$1;$2)
-
 If (Not($markdown))
-	// deliver others files, like image if not managed by mark4down
-	// you can limit to images or folder Documentation, as you want;
-	// or do other requests on your server
-	WEB SEND FILE($rootFolder.file(Substring($1;2)).platformPath)
+  // do other requests on your server
 End if
 ```
 
 > with `$1` and `$2` parameters of  `On Web Connection` database method.
+
+You must copy WebFolder of component into your database or make a redirection and use `WEB SEND FILE`.
 
 Then open your browser to see the web markdown editor
 
