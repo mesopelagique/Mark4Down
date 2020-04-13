@@ -11,11 +11,13 @@ Realtime markdown editor for your 4D database.
 <img src="Documentation/preview.png" alt="preview"
 	title="preview" width="600" />
 
-## Usage
+## Launch web server
+
+This a web component. Your need to start a web server to deliver the component interface in your web browser.
 
 ### Using the component web server
 
-If do not want to pollute your database web server, a component could provide one since new 18R release.
+If do not want to pollute your database web server, a 4D component could provide one, since new 18R release.
 
 There is two way to launch the component web server:
 
@@ -23,12 +25,10 @@ There is two way to launch the component web server:
 
 _In database setting, security tab, "Execute  `On Host Database Event` ..._
 
-💡 This is the easiest way to have an editor always ready for all your database by placing this component into your 4D app Components folder
+💡 This is the easiest way to have an editor always ready for all your database by placing this component into your 4D app Components folder. See [install](#install) section.
 
-A web server for the component will be started when your database start, the default url will be 
-[http://localhost:8349](http://localhost:8349)
-
-_as defined by component [settings.4DSettings](Project/Sources/settings.4DSettings)_
+A web server for the component will be started when your database start and the default url will be 
+[http://localhost:8349](http://localhost:8349) _(as defined by component [settings.4DSettings](Project/Sources/settings.4DSettings))_
 
 #### or by starting the component web server yourself
 
@@ -59,13 +59,19 @@ Then open your browser to see the web markdown editor
 
 ### In your 4D for all your databases
 
-Drag the component in your 4D Components/ folder (on macOS for instance /Applications/4D.app/Contents/Components/)
+Just launch this command in terminal for macOS to install the lastest released version
 
-⚠️ The component folder must be renamed to Mark4Down.4dbase if you use source from github.
+```bash
+curl -sL https://mesopelagique.github.io/Mark4Down/install.sh | sh
+```
+
+Or manually download and drag the component in your 4D `Components/` folder (on macOS for instance `/Applications/4D.app/Contents/Components/`)
+
+⚠️ The component folder must be renamed to `Mark4Down.4dbase` if you use sources from github.
 
 ### For one database
 
-Drag the component in the Components folder into your database.
+Drag the component in the `Components` folder into your database.
 
 ## More
 
