@@ -12,6 +12,8 @@ Realtime markdown editor for your 4D database.
 <img src="Documentation/preview.png" alt="preview"
 	title="preview" width="600" />
 
+> Quick install: Do the command described by [install](#install), then [accept host database event](#by-accepting-to-execute-on-host-database-event-method-of-the-component), open a database or re-start it and finally open  http://localhost:8349
+
 ## Launch web server
 
 This a web component. Your need to start a web server to deliver the component interface in your web browser.
