@@ -99,6 +99,10 @@ Go to `/mark4down/diff`, ex:  http://localhost:8349/mark4down/diff/
 - Markdown editor by [SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor)
 - Code syntax highlighting by [highlightjs](https://highlightjs.org/) with [4d addons](https://github.com/highlightjs/highlightjs-4d)
 
+---
+
+[<img src="https://mesopelagique.github.io/quatred.png" alt="mesopelagique"/>](https://mesopelagique.github.io/)
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [code-shield]: https://img.shields.io/static/v1?label=language&message=4d&color=blue
