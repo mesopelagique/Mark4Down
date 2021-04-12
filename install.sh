@@ -26,9 +26,9 @@ src=$TMP/$package.4dbase
 echo "🔍 Find 4D path"
 dst="/Applications/4D.app"
 if [ ! -d "$dst" ]; then
-  dst=$(mdfind kMDItemCFBundleIdentifier = "com.4d.4d" | head -n 1)
+  dst=$(mdfind kMDItemCFBundleIdentifier = "com.4D.4D" | head -n 1)
   if [ -z "$dst" ];then
-    dst=$(mdfind kMDItemCFBundleIdentifier = "com.4D.4D" | head -n 1)
+    dst=$(mdfind kMDItemCFBundleIdentifier = "com.4d.4d" | head -n 1)
   fi
 fi
 
