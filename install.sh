@@ -24,9 +24,12 @@ unzip -q $archive -d $TMP/
 src=$TMP/$package.4dbase
 
 echo "🔍 Find 4D path"
-dst="/Application/4D.app"
+dst="/Applications/4D.app"
 if [ ! -d "$dst" ]; then
   dst=$(mdfind kMDItemCFBundleIdentifier = "com.4d.4d" | head -n 1)
+  if [ -z "$dst" ];then
+    dst=$(mdfind kMDItemCFBundleIdentifier = "com.4D.4D" | head -n 1)
+  fi
 fi
 
 if [ -d "$dst" ]; then
