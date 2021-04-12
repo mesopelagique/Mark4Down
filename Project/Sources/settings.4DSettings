@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="5">
+﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="8">
 	<com.4d>
 		<web>
 			<standalone_server>
@@ -7,6 +7,9 @@
 		</web>
 		<compiler>
 			<options compilation_path="3"/>
+			<typage default_for_button="2"/>
+			<method_suffix arrays="" interprocess_arrays="" interprocess_variables="" methods="" variables=""/>
 		</compiler>
+		<general execute_host_database_event="true"/>
 	</com.4d>
 </preferences>

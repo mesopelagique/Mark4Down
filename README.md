@@ -9,7 +9,7 @@ Realtime markdown editor for your 4D database.
 * See list of available, missing or orphan documentation files (toolbar buttons at the right)
 * Open github or see diff from last commit
 
-<img src="Documentation/preview.png" alt="preview"
+<img src=" Documentation/preview.png" alt="preview"
 	title="preview" width="600" />
 
 > Quick install: Do the command described by [install](#install), then [accept host database event](#by-accepting-to-execute-on-host-database-event-method-of-the-component) in your database, re-start your database and finally open  http://localhost:8349
