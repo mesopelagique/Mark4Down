@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
-<base name="" uuid="48640A4329AC468C920DD615A9D1DBC5" collation_locale="en">
+<base name="Mark4Down" uuid="48640A4329AC468C920DD615A9D1DBC5" collation_locale="en">
 	<schema name="DEFAULT_SCHEMA"/>
+	<base_extra __stringCompHash="icu:63.1.0" __keywordBuildingHash="icu:63.1.0"/>
 </base>
